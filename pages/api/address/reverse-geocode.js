@@ -1,5 +1,4 @@
 import axios from 'axios';
-import util from 'util';
 
 const handler = async (req, res) => {
   switch (req.method) {
