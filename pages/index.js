@@ -1,7 +1,8 @@
 import HeaderMain from '../components/Ui/Header/HeaderMain';
 import styled from 'styled-components';
-
+import React, { useState } from 'react';
 import Map from '../components/Main/Map';
+import ListGroup from '../components/Main/ListGroup';
 
 const Section = styled.section`
   display: flex;
@@ -20,13 +21,22 @@ const Right = styled.div`
 `;
 
 const Home = () => {
+  const [address, setAddress] = useState('');
+  const [showPlaceList, setShowPlaceList] = useState([]);
+
   return (
     <>
-      <HeaderMain></HeaderMain>
+      <HeaderMain address={address}></HeaderMain>
       <Section>
-        <Left></Left>
+        <Left>
+          <ListGroup list={showPlaceList} />
+        </Left>
         <Right>
-          <Map></Map>
+          <Map
+            address={address}
+            setAddress={setAddress}
+            setShowPlaceList={setShowPlaceList}
+          ></Map>
         </Right>
       </Section>
     </>
