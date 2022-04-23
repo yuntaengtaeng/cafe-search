@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Map = ({ address, setAddress, setShowPlaceList }) => {
-  const [myLocation, setNyLocation] = useState(null);
+const Map = ({
+  address,
+  setAddress,
+  myLocation,
+  setNyLocation,
+  setShowPlaceList,
+}) => {
   const [placeData, setPlaceData] = useState([]);
   const [map, setMap] = useState(null);
 

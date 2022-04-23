@@ -16,11 +16,11 @@ const Header = styled.header`
   }
 `;
 
-const HeaderMain = ({ address }) => {
+const HeaderMain = ({ address, searchIconClickHandler }) => {
   return (
     <Header>
       <h3>{address}</h3>
-      <VscSearch size={24} color="white"></VscSearch>
+      <VscSearch size={24} color="white" onClick={searchIconClickHandler} />
     </Header>
   );
 };
