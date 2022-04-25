@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "cheerio": "^1.0.0-rc.10",
     "next": "12.1.5",
+    "puppeteer": "^13.6.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",
