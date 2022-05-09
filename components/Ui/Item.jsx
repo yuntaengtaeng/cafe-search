@@ -26,10 +26,9 @@ const Phone = styled.p`
   color: #258fff;
 `;
 
-const Item = ({ item }) => {
-  console.log(item);
+const Item = ({ item, onClickHandler }) => {
   return (
-    <Card>
+    <Card onClick={onClickHandler.bind(this, item)}>
       <Title>{item.placeName}</Title>
       <Address>
         <p>{item.address}</p>
