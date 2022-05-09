@@ -33,7 +33,7 @@ const handler = async (req, res) => {
         const placeName = $('.tit_location').text();
         const loadAddress = $('.txt_address').text();
         const address = $('.txt_addrnum').text().replace('지번', '');
-        const openingTime = $('.time_operation').text();
+        const openingTime = $('.txt_operation').text();
         const imgElem = $('.bg_present');
 
         const extractLoadAddress = loadAddress
@@ -46,7 +46,7 @@ const handler = async (req, res) => {
                 ? true
                 : loadAddress.charAt(i + 1).trim();
 
-            return (!!left || !!right) && !!v.trim();
+            return !!left || !!right;
           })
           .join('');
 
@@ -54,7 +54,7 @@ const handler = async (req, res) => {
 
         if (!!imgElem['0']) {
           imageURL = imgElem['0'].attribs.style.replace(
-            /background-image:url|\(|\)|\/|'/g,
+            /background-image:url\('\/\/|'\)/g,
             ''
           );
         }
